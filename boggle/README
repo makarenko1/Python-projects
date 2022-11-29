@@ -1,0 +1,35 @@
+	MAIN PARTS AND SPLITTING TASKS:
+	Our project is divided into three parts: graphics, logics 
+and controller. The graphic one doesn't know anything about the 
+logical one and the controller binds them together by performing 
+data exchange within the game. The controller sends commands to the 
+graphic part to be executed in case of certain actions. In our case, 
+when the time runs out, when the user pressed the Enter button and 
+when the user pressed a letter on the game board. Thus, when any of 
+the above actions occurs, control of the game is transferred to the 
+controller, which turns to the logical part to check the data and to 
+the graphic part to update the display. The graphical part is solely 
+responsible for displaying data, and the logical part is responsible 
+for checking it.
+
+	WHAT IS NEW:
+1.	We have added the ability to load a custom word file via the 
+command line. If the user did not specify his own file when starting 
+the program, the standard file "boggle_dict.txt" is used. 
+2.	We also added a word preview so that the user can see what 
+they have already entered. 
+3.	Sending a word is carried out using a separate Enter button,
+ start of the game is also carried out using a button, so in our 
+game implementation those who don't have a keyboard could play it.
+4.	Added animation of moving around the board with the mouse 
+(the cell that was hovered over is painted in a different color). 
+Also, the selected cell is colored differently and there is a special
+ color for the hovered selected cells.
+5.	We added a pre-check of a move, so that the user can't 
+choose distant cells from those that they have already chosen. (Like 
+in the mobile Boggle implementstions, e.g). Such, even if a person 
+doesn't know the game rules, they will play correctly and won't lose 
+their time on illegal moves.
+6.	The game was created solely based on the 
+model-view-controller paradigm. Thus, the graphic and the logical 
+parts are completely independent and can be tested.

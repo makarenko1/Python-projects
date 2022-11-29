@@ -1,0 +1,35 @@
+The program for this exercise is divided into several parts.
+Firstly, the melody editing part, and second, the part of
+creating a melody. Therefore, modular separation was necessary
+for these parts. In addition, each part consists of several
+sub-parts. For example, editing a melody includes
+7 points and the eighth is saving.
+	1. Reversing a melody;
+	2. Creating a negative melody;
+	3. Speeding the melody up;
+	4. Slowing it down;
+	5. Increasing the volume;
+	6. Decreasing the volume;
+	7. Low-pass filter;
+	8. Saving the result.
+Melody creation includes
+	1. Loading notes from a file and creating a list 
+	from them;
+	2. Calculation of audio data for each note;
+	3. Saving the result.
+To ensure the modularity of the program, for each of the subparts
+a separate function was created besides the save function. Function
+of saving is common to the two parts (editing and creating melodies).
+
+A limit_checking check function was also created to ensure that 
+when the melody is being changed, the array values will not go 
+beyond MAX_VOLUME and MIN_VOLUME.
+
+We also created a calculate_samples function that calculates
+audio data for one note, knowing its frequency and playing time,
+to avoid repetition of code.
+
+Calling the main menu after finishing the work of each part
+happens using recursion. This was done because an infinite loop did 
+not exit if. Exiting general recursion is done with sys.exit, which 
+terminates the program generally.
